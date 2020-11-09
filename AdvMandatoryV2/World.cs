@@ -9,14 +9,37 @@ namespace AdvMandatoryV2
     {
         private int[,] _playground;
         private List<IObjectInWorld> _objectsInWorld;
+        private static World instance;
 
-        public World(int height, int width)
+        private World()
+        {
+            _playground = new int[10, 10];
+            _objectsInWorld = new List<IObjectInWorld>();
+        }
+
+        /*
+         *private World(int height, int width)
         {
             _playground = new int[height, width];
             _objectsInWorld = new List<IObjectInWorld>();
         }
+         *
+         */
 
-        
+        public static World Instance
+        {
+            get
+            {
+                if (instance == null) instance = new World();
+                return instance;
+            }
+        }
+
+        public void ChangeWorldSize(int height, int width)
+        {
+            _playground = null;
+            _playground = new int[height, width];
+        }
 
         public int[,] Playground
         {
@@ -30,6 +53,10 @@ namespace AdvMandatoryV2
                 obj.Pos.Y < _playground.GetLength(0))
             {
                 _objectsInWorld.Add(obj);
+            }
+            else
+            {
+                Console.WriteLine("\n\t\t\tObject position out of world\n");
             }
         }
 
