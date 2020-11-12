@@ -39,10 +39,11 @@ namespace TesterProject
 
             Shield shield1 = new Shield(new Position(2,2), "Shield1", 12);
             
-            ConcreteDecorator fiveTimesBlock = new ConcreteDecorator(shield1);
+            DefenceBlockEnhance fiveTimesBlock = new DefenceBlockEnhance(shield1);
 
             Console.WriteLine(shield1);
             Console.WriteLine(fiveTimesBlock.Block);
+            //fiveTimesBlock.GetBase.Block = 20;
             Console.WriteLine(shield1);
         }
     }

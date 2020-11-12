@@ -5,9 +5,9 @@ using AdvMandatoryV2.Interfaces;
 
 namespace AdvMandatoryV2.Decorator
 {
-    public class ConcreteDecorator : Decorator
+    public class DefenceBlockEnhance : DecoratorDefence
     {
-        public ConcreteDecorator(IDefence item) : base(item)
+        public DefenceBlockEnhance(IDefence item) : base(item)
         {
             
         }

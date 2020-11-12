@@ -5,11 +5,11 @@ using AdvMandatoryV2.Interfaces;
 
 namespace AdvMandatoryV2.Decorator
 {
-    public abstract class Decorator : IDefence
+    public abstract class DecoratorDefence : IDefence
     {
         protected IDefence component;
 
-        public Decorator(IDefence item)
+        public DecoratorDefence(IDefence item)
         {
             component = item;
         }
