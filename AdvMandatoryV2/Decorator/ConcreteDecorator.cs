@@ -19,5 +19,10 @@ namespace AdvMandatoryV2.Decorator
             }
             set { base.Block = value; }
         }
+
+        public IDefence GetBase
+        {
+            get { return base.component; }
+        }
     }
 }

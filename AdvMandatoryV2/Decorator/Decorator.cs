@@ -19,7 +19,15 @@ namespace AdvMandatoryV2.Decorator
             component = item;
         }
 
-        public Position Pos { get; set; }
+        public Position Pos
+        {
+            get
+            {
+                if (component != null) return component.Pos;
+                else return new Position(99,99);
+            }
+            set { component.Pos = value; }
+        }
 
         public string Name { get; set; }
 
@@ -30,7 +38,7 @@ namespace AdvMandatoryV2.Decorator
                 if (component != null) return component.Block;
                 else return Block;
             }
-            set { Block = value; }
+            set { component.Block = value; }
         }
 
     }

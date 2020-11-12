@@ -38,12 +38,12 @@ namespace TesterProject
             world.PrintObjectsInWorld();
 
             Shield shield1 = new Shield(new Position(2,2), "Shield1", 12);
+            
+            ConcreteDecorator fiveTimesBlock = new ConcreteDecorator(shield1);
 
             Console.WriteLine(shield1);
-
-            ConcreteDecorator cd = new ConcreteDecorator(shield1);
-
-            Console.WriteLine(cd.Block);
+            Console.WriteLine(fiveTimesBlock.Block);
+            Console.WriteLine(shield1);
         }
     }
 }
